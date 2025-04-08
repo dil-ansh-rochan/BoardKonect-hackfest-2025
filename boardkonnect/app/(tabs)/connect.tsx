@@ -3,6 +3,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import { useState, useEffect } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 interface ChildItemProps {
   image: string;
@@ -84,6 +85,7 @@ export default function ConnectScreen() {
   const [sections, setSections] = useState<Section[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { user } = useAuth();
 
   useEffect(() => {
     fetchConnectData();
@@ -92,7 +94,7 @@ export default function ConnectScreen() {
   const fetchConnectData = async () => {
     try {
       // Replace with your actual API URL
-      const response = await fetch('http://localhost:3000/api/connect/1');
+      const response = await fetch(`https://board-konect-hackfest-2025.vercel.app/api/connect/${user?.id}`);
       if (!response.ok) {
         throw new Error('Failed to fetch connect data');
       }

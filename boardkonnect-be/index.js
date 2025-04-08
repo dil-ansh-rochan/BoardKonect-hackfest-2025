@@ -12,7 +12,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 const users = [
   {
     id: 1,
-    email: "ansh@boardkonnect.com",
+    email: "ansh@boardkonect.com",
     password: "demo123", // In a real app, this would be hashed
     profile: {
       name: "John Doe",
@@ -25,7 +25,7 @@ const users = [
   },
   {
     id: 2,
-    email: "partha@boardkonnect.com",
+    email: "partha@boardkonect.com",
     password: "demo123",
     profile: {
       name: "Sarah Smith",
@@ -38,7 +38,7 @@ const users = [
   },
   {
     id: 3,
-    email: "ceo@boardkonnect.com",
+    email: "ceo@boardkonect.com",
     password: "demo123",
     profile: {
       name: "Alex Wilson",
@@ -51,7 +51,7 @@ const users = [
   },
   {
     id: 4,
-    email: "cto@boardkonnect.com",
+    email: "cto@boardkonect.com",
     password: "demo123",
     profile: {
       name: "Maria Garcia",

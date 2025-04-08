@@ -118,12 +118,14 @@ export default function SettingsScreen() {
         }
       } catch (error) {
         console.error('Error opening calendar:', error);
-        Alert.alert(
-          'Error',
-          'Failed to open calendar. Please try again.',
-          [{ text: 'OK' }]
-        );
+      
       }
+    } if(!item.isEnabled){
+      Alert.alert(
+        'Message',
+        `Action is not available in ${user?.profile?.country} region`,
+        [{ text: 'OK' }]
+      );
     } else {
       console.log('Pressed:', item.title);
     }
