@@ -89,7 +89,9 @@ export default function HomeScreen() {
       style={styles.container}
       showsVerticalScrollIndicator={false}
     >
+      {user?.profile?.country=='Russia' && <ThemedText style={styles.headerTitle2}>Sanctioned Country</ThemedText>}
       <Carousel items={data.carousel} />
+
       <GridSection title={`${user?.profile?.country} GRC Content`} items={data.grcContent} />
       <View style={styles.section}>
         <ThemedText style={styles.sectionTitle}>Top 5 Customers</ThemedText>
@@ -125,5 +127,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 16,
+  },
+  headerTitle2: {
+    fontSize: 20,
+    color: 'red',
+    fontWeight: 'bold',
+    marginTop: 16,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
 });

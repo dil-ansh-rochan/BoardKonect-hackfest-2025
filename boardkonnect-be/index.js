@@ -365,7 +365,7 @@ const dataRussia={
             url: "https://www.gazprom.com/"
           },
           {
-            source: "https://example.com/images/monopoly.jpg",
+            source: "https://www.rosneft.com/media/rosneft/img/logo_en.png",
             title: "$32.2B",
             url: "https://www.rosneft.com/"
           },
