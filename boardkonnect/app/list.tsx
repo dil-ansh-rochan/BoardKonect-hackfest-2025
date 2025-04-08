@@ -57,11 +57,8 @@ export default function ListScreen() {
         setLoading(true);
         setError(null);
         
-        const url = `https://board-konect-hackfest-2025.vercel.app/api/grc_content/${user.id}/${title.toLowerCase()}`;
-        console.log('Fetching from URL:', url);
-        
+        const url = `https://board-konect-hackfest-2025.vercel.app/api/grc_content/${user.id}/${title.toLowerCase()}`;        
         const response = await fetch(url);
-        console.log('Response status:', response.status);
         
         if (!response.ok) {
           const errorText = await response.text();
@@ -74,7 +71,6 @@ export default function ListScreen() {
         }
 
         const data = await response.json();
-        console.log('Received data:', data);
         
         if (!Array.isArray(data)) {
           throw new Error('Invalid response format: expected an array');

@@ -55,7 +55,7 @@ const users = [
     password: "demo123",
     profile: {
       name: "Maria Garcia",
-      country: "Spain",
+      country: "Russia",
       company: "Fun & Games SA",
       branch: "Madrid",
       position: "CEO",
@@ -159,29 +159,29 @@ const homePageData = {
   ],
   customerARR: [
     {
-      source: "https://example.com/images/catan.jpg",
-      title: "Catan",
-      url: "https://boardkonnect.com/games/catan"
+      source: "https://www.newsonprojects.com/uploads/news/075741.jpg",
+      title: "ARR-₹15.T",
+      url: "https://www.ril.com/"
     },
     {
-      source: "https://example.com/images/monopoly.jpg",
-      title: "Monopoly",
-      url: "https://boardkonnect.com/games/monopoly"
+      source: "https://play-lh.googleusercontent.com/POGVZhNvSh05yA01H2VTlElv0Mw6r4R7hj9w7DaOvJVgiGoi0Fcawi02yITkyMT1zwqO=w240-h480-rw",
+      title: "ARR-₹14.03T",
+      url: "https://www.hdfcbank.com/"
     },
     {
-      source: "https://example.com/images/chess.jpg",
-      title: "Chess",
-      url: "https://boardkonnect.com/games/chess"
+      source: "https://be.tricentis.com/media-assets/2024/04/TCS_NewLogo_Final_CMYK_Black.png",
+      title: "ARR-₹11.9T",
+      url: "https://www.tcs.com/"
     },
     {
-      source: "https://example.com/images/scrabble.jpg",
-      title: "Scrabble",
-      url: "https://boardkonnect.com/games/scrabble"
+      source: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Bharti_Airtel_Logo.svg",
+      title: "ARR-₹10.30T",
+      url: "https://www.airtel.in/"
     },
     {
-      source: "https://example.com/images/risk.jpg",
-      title: "Risk",
-      url: "https://boardkonnect.com/games/risk"
+      source: "https://annapurnafinance.in/wp-content/uploads/2019/02/ICICI-Bank.png",
+      title: "ARR-₹9.3T",
+      url: "https://www.icicibank.com/"
     }
   ]
 };
@@ -225,31 +225,31 @@ const dataUSA={
       ],
       customerARR: [
         {
-          source: "https://example.com/images/catan.jpg",
-          title: "Catan",
-          url: "https://boardkonnect.com/games/catan"
+          source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyeo87Qcwf6tC2GOStKHkDZyfksWG_OsIMiA&s",
+          title: "ARR-$3M",
+          url: "https://www.dfas.mil/"
         },
         {
-          source: "https://example.com/images/monopoly.jpg",
-          title: "Monopoly",
-          url: "https://boardkonnect.com/games/monopoly"
+          source: "https://play-lh.googleusercontent.com/qp53mBI8DbQV3fiNlZKVf_6FjDgOAO76DCQLO7WpeJjiJn4lC90KQyKDkNQFtH3Ju-E",
+          title: "ARR-$1.2M",
+          url: "https://www.bankofamerica.com/"
         },
         {
-          source: "https://example.com/images/chess.jpg",
-          title: "Chess",
-          url: "https://boardkonnect.com/games/chess"
+          source: "https://imageio.forbes.com/specials-images/imageserve/5c13d2f64bbe6f0f2aa26233/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87",
+          title: "ARR-$1.1M",
+          url: "https://www.cisco.com/site/in/en/index.html"
         },
         {
-          source: "https://example.com/images/scrabble.jpg",
-          title: "Scrabble",
-          url: "https://boardkonnect.com/games/scrabble"
+          source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfJhtf564KV__Quog_F0ly7b-cD0ZKp9EKxA&s",
+          title: "ARR-$1.1M",
+          url: "https://store.legal.thomsonreuters.com/law-products/solutions/west-publisher"
         },
         {
-          source: "https://example.com/images/risk.jpg",
-          title: "Risk",
-          url: "https://boardkonnect.com/games/risk"
+          source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR30h6ji4SmRPjBrpTxqQlxhoze9wkiGyLETmy_BsoSvjRAKS_4NQOIEFvtN21pJ2cR-Y&usqp=CAU",
+          title: "ARR-$1M",
+          url: "https://www.jnj.com/"
         }
-      ] 
+      ]
 }
 
 const dataUK={
@@ -293,29 +293,29 @@ const dataUK={
       ],
         customerARR: [
           {
-            source: "https://example.com/images/catan.jpg",
-            title: "Catan",
-            url: "https://boardkonnect.com/games/catan"
+            source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUWMySoOIP1NZUOTrK_b5_SRanld3iMNVmQ&s",
+            title: "ARR-$1.8M",
+            url: "https://www.deutschebank.co.in/"
           },
           {
-            source: "https://example.com/images/monopoly.jpg",
-            title: "Monopoly",
-            url: "https://boardkonnect.com/games/monopoly"
+            source: "https://www.the-digital-insurer.com/wp-content/uploads/2021/01/HSBC-Global-Services-260x200.png",
+            title: "ARR-$1.3M",
+            url: "https://internationalservices.hsbc.com/"
           },
           {
-            source: "https://example.com/images/chess.jpg",
-            title: "Chess",
-            url: "https://boardkonnect.com/games/chess"
+            source: "https://www.openbanking.org.uk/wp-content/uploads/2021/04/Barclays-Bank-logo-375x375.png",
+            title: "ARR-$0.8M",
+            url: "https://home.barclays/who-we-are/structure-and-leadership/"
           },
           {
-            source: "https://example.com/images/scrabble.jpg",
-            title: "Scrabble",
-            url: "https://boardkonnect.com/games/scrabble"
+            source: "https://lifesciencewa.org/wp-content/uploads/2020/10/AON-Risk-Solutions-logo-600x600-1.png",
+            title: "ARR-$0.7M",
+            url: "https://www.aon.com/india/default.jsp"
           },
           {
-            source: "https://example.com/images/risk.jpg",
-            title: "Risk",
-            url: "https://boardkonnect.com/games/risk"
+            source: "https://media.licdn.com/dms/image/v2/D4E0BAQEDov-ZkIgdpw/company-logo_200_200/company-logo_200_200/0/1715850190053/aviva_plc_logo?e=2147483647&v=beta&t=d3nI49Unh0qy_id3hHnlhvWfDlqk7pY-h1n74hxOC1w",
+            title: "ARR-$0.5M",
+            url: "https://www.aviva.com/"
           }
         ]  
 }
@@ -360,29 +360,29 @@ const dataRussia={
       ],
         customerARR: [
           {
-            source: "https://example.com/images/catan.jpg",
-            title: "Catan",
-            url: "https://boardkonnect.com/games/catan"
+            source: "https://logowik.com/content/uploads/images/gazprom8746.logowik.com.webp",
+            title: "$45.19B",
+            url: "https://www.gazprom.com/"
           },
           {
             source: "https://example.com/images/monopoly.jpg",
-            title: "Monopoly",
-            url: "https://boardkonnect.com/games/monopoly"
+            title: "$32.2B",
+            url: "https://www.rosneft.com/"
           },
           {
-            source: "https://example.com/images/chess.jpg",
-            title: "Chess",
-            url: "https://boardkonnect.com/games/chess"
+            source: "https://upload.wikimedia.org/wikipedia/commons/a/af/Sberbank_logo_2020_en.png",
+            title: "$28.89B",
+            url: "https://www.sberbank.com/"
           },
           {
-            source: "https://example.com/images/scrabble.jpg",
-            title: "Scrabble",
-            url: "https://boardkonnect.com/games/scrabble"
+            source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsih5bu8tIAGZLn5g2k1Z_GxPfJdBlS8TAFA&s",
+            title: "$28.69B",
+            url: "https://www.novatek.ru/en/"
           },
           {
-            source: "https://example.com/images/risk.jpg",
-            title: "Risk",
-            url: "https://boardkonnect.com/games/risk"
+            source: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/LUK_OIL_Logo.svg/1200px-LUK_OIL_Logo.svg.png",
+            title: "$26.14B",
+            url: "https://www.lukoil.com/"
           }
         ] 
       
