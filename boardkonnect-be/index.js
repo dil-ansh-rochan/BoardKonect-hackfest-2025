@@ -12,7 +12,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 const users = [
   {
     id: 1,
-    email: "john.doe@boardkonnect.com",
+    email: "ansh@boardkonnect.com",
     password: "demo123", // In a real app, this would be hashed
     profile: {
       name: "John Doe",
@@ -25,7 +25,7 @@ const users = [
   },
   {
     id: 2,
-    email: "sarah.smith@boardkonnect.com",
+    email: "partha@boardkonnect.com",
     password: "demo123",
     profile: {
       name: "Sarah Smith",
@@ -38,7 +38,7 @@ const users = [
   },
   {
     id: 3,
-    email: "alex.wilson@boardkonnect.com",
+    email: "ceo@boardkonnect.com",
     password: "demo123",
     profile: {
       name: "Alex Wilson",
@@ -51,7 +51,7 @@ const users = [
   },
   {
     id: 4,
-    email: "maria.garcia@boardkonnect.com",
+    email: "cto@boardkonnect.com",
     password: "demo123",
     profile: {
       name: "Maria Garcia",
@@ -755,32 +755,38 @@ const governanceUSA=[
     {
       "title": "Financial statements",
       "subtitle": "Overview of company's fiscal health",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "calender"
     },
     {
       "title": "Voting",
       "subtitle": "Cast decisions on key matters",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "CEO report",
       "subtitle": "Leadership insights and strategic direction",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Audit committee report",
       "subtitle": "Review of financial controls & compliance",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "To Do list",
       "subtitle": "Tasks scheduled for completion",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Calendar",
       "subtitle": "Upcoming events and deadlines",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "calender"
     }
   ]
   
@@ -788,32 +794,38 @@ const governanceUSA=[
     {
       "title": "Financial statements",
       "subtitle": "Overview of company's fiscal health",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Voting",
       "subtitle": "Cast decisions on key matters",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "CEO report",
       "subtitle": "Leadership insights and strategic direction",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Audit committee report",
       "subtitle": "Review of financial controls & compliance",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "To Do list",
       "subtitle": "Tasks scheduled for completion",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Calendar",
       "subtitle": "Upcoming events and deadlines",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "calender"
     }
   ]
   
@@ -821,32 +833,38 @@ const governanceUSA=[
     {
       "title": "Financial statements",
       "subtitle": "Overview of company's fiscal health",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "Voting",
       "subtitle": "Cast decisions on key matters",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "CEO report",
       "subtitle": "Leadership insights and strategic direction",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "Audit committee report",
       "subtitle": "Review of financial controls & compliance",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "To Do list",
       "subtitle": "Tasks scheduled for completion",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "Calendar",
       "subtitle": "Upcoming events and deadlines",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "calender"
     }
   ]
   
@@ -855,32 +873,38 @@ const governanceUSA=[
     {
       "title": "Financial statements",
       "subtitle": "Overview of company's fiscal health",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Voting",
       "subtitle": "Cast decisions on key matters",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "CEO report",
       "subtitle": "Leadership insights and strategic direction",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Audit committee report",
       "subtitle": "Review of financial controls & compliance",
-      "isEnabled": false
+      "isEnabled": false,
+      "type": "url"
     },
     {
       "title": "To Do list",
       "subtitle": "Tasks scheduled for completion",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "url"
     },
     {
       "title": "Calendar",
       "subtitle": "Upcoming events and deadlines",
-      "isEnabled": true
+      "isEnabled": true,
+      "type": "calender"
     }
   ]
   

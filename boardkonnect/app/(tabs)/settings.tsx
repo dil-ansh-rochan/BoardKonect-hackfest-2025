@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, View, Pressable, ActivityIndicator } from 'react-native';
+import { StyleSheet, ScrollView, View, Pressable, ActivityIndicator, Linking, Platform, Alert } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useAuth } from '@/context/AuthContext';
@@ -8,6 +8,7 @@ interface SettingItemProps {
   title: string;
   subtitle: string;
   isEnabled: boolean;
+  type?: string;
   onPress?: () => void;
 }
 
@@ -15,9 +16,11 @@ interface SettingItem {
   title: string;
   subtitle: string;
   url: string;
+  isEnabled: boolean;
+  type?: string;
 }
 
-function SettingItem({ title, subtitle, isEnabled, onPress }: SettingItemProps) {
+function SettingItem({ title, subtitle, isEnabled, type, onPress }: SettingItemProps) {
   return (
     <Pressable 
       style={({ pressed }) => [
@@ -90,6 +93,42 @@ export default function SettingsScreen() {
     fetchSettings();
   }, [user?.profile?.country]);
 
+  const handleSettingPress = async (item: SettingItem) => {
+    if (item.type === 'calender') {
+      try {
+        const calendarUrl = Platform.select({
+          ios: 'calshow:',
+          android: 'content://com.android.calendar',
+        });
+
+        if (!calendarUrl) {
+          throw new Error('Platform not supported');
+        }
+
+        const supported = await Linking.canOpenURL(calendarUrl);
+        
+        if (supported) {
+          await Linking.openURL(calendarUrl);
+        } else {
+          Alert.alert(
+            'Calendar Not Available',
+            'Unable to open calendar. Please check your device settings.',
+            [{ text: 'OK' }]
+          );
+        }
+      } catch (error) {
+        console.error('Error opening calendar:', error);
+        Alert.alert(
+          'Error',
+          'Failed to open calendar. Please try again.',
+          [{ text: 'OK' }]
+        );
+      }
+    } else {
+      console.log('Pressed:', item.title);
+    }
+  };
+
   if (loading) {
     return (
       <View style={styles.centerContainer}>
@@ -121,8 +160,9 @@ export default function SettingsScreen() {
             key={index}
             title={item.title}
             subtitle={item.subtitle}
-            isEnabled={false} // All items from API are enabled by default
-            onPress={() => console.log('Pressed:', item.title)}
+            isEnabled={item?.isEnabled||false}
+            type={item.type}
+            onPress={() => handleSettingPress(item)}
           />
         ))}
       </View>

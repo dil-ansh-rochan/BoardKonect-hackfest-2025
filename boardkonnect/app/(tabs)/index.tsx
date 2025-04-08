@@ -34,6 +34,7 @@ interface HomePageData {
 
 export default function HomeScreen() {
   const { user } = useAuth();
+  console.log(user);
   const [data, setData] = useState<HomePageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -89,9 +90,9 @@ export default function HomeScreen() {
       showsVerticalScrollIndicator={false}
     >
       <Carousel items={data.carousel} />
-      <GridSection title="GRC Content" items={data.grcContent} />
+      <GridSection title={`${user?.profile?.country} GRC Content`} items={data.grcContent} />
       <View style={styles.section}>
-        <ThemedText style={styles.sectionTitle}>Customer ARR</ThemedText>
+        <ThemedText style={styles.sectionTitle}>Top 5 Customers</ThemedText>
         <ImageScroll images={data.customerARR} />
       </View>
     </ScrollView>

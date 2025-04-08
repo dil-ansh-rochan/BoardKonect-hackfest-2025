@@ -2,9 +2,9 @@ import { StyleSheet, ScrollView, Image, View, Dimensions } from 'react-native';
 import { ThemedText } from './ThemedText';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-const ITEM_WIDTH = 80;
-const ITEM_HEIGHT = 80;
-const SPACING = 12;
+const ITEM_WIDTH = 65;
+const ITEM_HEIGHT = 65;
+const SPACING = 6;
 
 interface ImageScrollProps {
   images: {

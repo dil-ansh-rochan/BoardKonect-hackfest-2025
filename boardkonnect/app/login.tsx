@@ -33,7 +33,7 @@ export default function LoginScreen() {
     <ThemedView style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={require('@/assets/images/app_icon.png')}
           style={styles.logo}
           resizeMode="contain"
         />
