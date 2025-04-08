@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Dimensions, View, Pressable, Linking } from 'react-native';
+import { StyleSheet, Dimensions, View, Pressable, Linking, Image } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -15,7 +15,7 @@ const CARD_WIDTH = SCREEN_WIDTH * 0.9;
 const SPACING = 20;
 
 interface CarouselItem {
-  image: any;
+  image: string;
   title: string;
   subtitle: string;
   url: string;
@@ -67,72 +67,77 @@ export function Carousel({ items }: CarouselProps) {
 
   return (
     <View style={styles.container}>
-      <Animated.View 
-        style={[
-          styles.cardsContainer,
-          {
-            transform: [{ translateX }],
-          },
-        ]}
-      >
-        {items.map((item, index) => {
-          const inputRange = [
-            (index - 1) * (CARD_WIDTH + SPACING),
-            index * (CARD_WIDTH + SPACING),
-            (index + 1) * (CARD_WIDTH + SPACING),
-          ];
+      <View style={styles.carouselWrapper}>
+        <Animated.View 
+          style={[
+            styles.cardsContainer,
+            {
+              transform: [{ translateX }],
+            },
+          ]}
+        >
+          {items.map((item, index) => {
+            const inputRange = [
+              (index - 1) * (CARD_WIDTH + SPACING),
+              index * (CARD_WIDTH + SPACING),
+              (index + 1) * (CARD_WIDTH + SPACING),
+            ];
 
-          const animatedStyle = useAnimatedStyle(() => {
-            return {
-              opacity: interpolate(
-                translateX.value,
-                inputRange,
-                [0.5, 1, 0.5],
-                Extrapolate.CLAMP
-              ),
-              scale: interpolate(
-                translateX.value,
-                inputRange,
-                [0.8, 1, 0.8],
-                Extrapolate.CLAMP
-              ),
-            };
-          });
+            const animatedStyle = useAnimatedStyle(() => {
+              return {
+                opacity: interpolate(
+                  translateX.value,
+                  inputRange,
+                  [0.5, 1, 0.5],
+                  Extrapolate.CLAMP
+                ),
+                scale: interpolate(
+                  translateX.value,
+                  inputRange,
+                  [0.8, 1, 0.8],
+                  Extrapolate.CLAMP
+                ),
+              };
+            });
 
-          return (
-            <Pressable 
-              key={index}
-              onPress={() => handleItemPress(item.url)}
-            >
-              <Animated.View style={[styles.card, animatedStyle]}>
-                <Animated.Image
-                  source={item.image}
-                  style={styles.image}
-                  resizeMode="cover"
-                />
-                <View style={styles.overlay}>
-                  <ThemedText style={styles.title}>{item.title}</ThemedText>
-                  <ThemedText style={styles.subtitle}>{item.subtitle}</ThemedText>
-                </View>
+            return (
+              <Animated.View
+                key={index}
+                style={[styles.card, animatedStyle]}
+              >
+                <Pressable
+                  onPress={() => handleItemPress(item.url)}
+                  style={styles.cardContent}
+                >
+                  <Image
+                    source={{ uri: item.image }}
+                    style={styles.image}
+                    resizeMode="cover"
+                  />
+                  <View style={styles.textContainer}>
+                    <ThemedText style={styles.title}>{item.title}</ThemedText>
+                    <ThemedText style={styles.subtitle}>{item.subtitle}</ThemedText>
+                  </View>
+                </Pressable>
               </Animated.View>
-            </Pressable>
-          );
-        })}
-      </Animated.View>
+            );
+          })}
+        </Animated.View>
 
-      <View style={styles.controls}>
-        <Pressable 
-          style={styles.controlButton}
-          onPress={() => handlePress('prev')}
-        >
-          <ThemedText style={styles.controlText}>←</ThemedText>
-        </Pressable>
-        <Pressable 
-          style={styles.controlButton}
-          onPress={() => handlePress('next')}
-        >
-          <ThemedText style={styles.controlText}>→</ThemedText>
-        </Pressable>
+        <View style={styles.controls}>
+          <Pressable
+            onPress={() => handlePress('prev')}
+            style={styles.controlButton}
+          >
+            <ThemedText style={styles.controlButtonText}>←</ThemedText>
+          </Pressable>
+          <Pressable
+            onPress={() => handlePress('next')}
+            style={styles.controlButton}
+          >
+            <ThemedText style={styles.controlButtonText}>→</ThemedText>
+          </Pressable>
+        </View>
       </View>
 
       <View style={styles.pagination}>
@@ -152,16 +157,24 @@ export function Carousel({ items }: CarouselProps) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
-    marginVertical: 20,
+    width: SCREEN_WIDTH,
+    height: 300,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  carouselWrapper: {
+    position: 'relative',
+    width: '100%',
+    height: 250,
   },
   cardsContainer: {
     flexDirection: 'row',
-    height: '100%',
+    alignItems: 'center',
+    paddingHorizontal: (SCREEN_WIDTH - CARD_WIDTH) / 2,
   },
   card: {
     width: CARD_WIDTH,
-    height: '100%',
+    height: 250,
     marginRight: SPACING,
     borderRadius: 20,
     overflow: 'hidden',
@@ -175,38 +188,35 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
+  cardContent: {
+    flex: 1,
+  },
   image: {
     width: '100%',
-    height: '100%',
+    height: 150,
   },
-  overlay: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+  textContainer: {
     padding: 15,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
     marginBottom: 5,
   },
   subtitle: {
     fontSize: 14,
-    color: '#fff',
+    color: '#666',
   },
   controls: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    paddingHorizontal: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
   controlButton: {
     width: 40,
@@ -216,28 +226,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  controlText: {
+  controlButtonText: {
     color: '#fff',
     fontSize: 20,
-    fontWeight: 'bold',
   },
   pagination: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    bottom: 10,
-    left: 0,
-    right: 0,
+    marginTop: 10,
   },
   paginationDot: {
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    backgroundColor: '#ccc',
     marginHorizontal: 4,
   },
   paginationDotActive: {
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
   },
 }); 

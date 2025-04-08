@@ -33,35 +33,35 @@ function SettingItem({ title, subtitle, isEnabled, onPress }: SettingItemProps) 
 export default function SettingsScreen() {
   const settingsItems = [
     {
-      title: 'Push Notifications',
-      subtitle: 'Receive updates about games and events',
+      title: 'Financial statements',
+      subtitle: 'Overview of company’s fiscal health',
       isEnabled: true,
     },
     {
-      title: 'Email Notifications',
-      subtitle: 'Get game updates in your inbox',
-      isEnabled: false,
-    },
-    {
-      title: 'Location Services',
-      subtitle: 'Find players and games near you',
+      title: 'Voting',
+      subtitle: 'Cast decisions on key matters',
       isEnabled: true,
     },
     {
-      title: 'Dark Mode',
-      subtitle: 'Use dark theme for better visibility',
-      isEnabled: false,
-    },
-    {
-      title: 'Sound Effects',
-      subtitle: 'Play sounds for game events',
+      title: 'CEO report',
+      subtitle: 'Leadership insights and strategic direction',
       isEnabled: true,
     },
     {
-      title: 'Vibration',
-      subtitle: 'Get haptic feedback for interactions',
-      isEnabled: false,
+      title: 'Audit committee report',
+      subtitle: 'Review of financial controls & compliance',
+      isEnabled: true,
     },
+    {
+      title: 'To Do list',
+      subtitle: 'Tasks scheduled for completion',
+      isEnabled: true,
+    },
+    {
+      title: 'Calendar',
+      subtitle: 'Upcoming events and deadlines',
+      isEnabled: true,
+    }
   ];
 
   return (
@@ -70,7 +70,7 @@ export default function SettingsScreen() {
       showsVerticalScrollIndicator={false}
     >
       <ThemedView style={styles.header}>
-        <ThemedText style={styles.headerTitle}>Settings</ThemedText>
+        <ThemedText style={styles.headerTitle}>Board (R) Actions</ThemedText>
       </ThemedView>
       
       <View style={styles.content}>

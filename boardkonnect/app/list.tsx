@@ -1,16 +1,19 @@
-import { StyleSheet, ScrollView, View, Pressable } from 'react-native';
+import { StyleSheet, ScrollView, View, Pressable, ActivityIndicator } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import { router, useLocalSearchParams } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 interface ListItemProps {
   title: string;
   subtitle: string;
+  url: string;
   onPress?: () => void;
 }
 
-function ListItem({ title, subtitle, onPress }: ListItemProps) {
+function ListItem({ title, subtitle, url, onPress }: ListItemProps) {
   return (
     <Pressable 
       style={({ pressed }) => [
@@ -30,40 +33,72 @@ function ListItem({ title, subtitle, onPress }: ListItemProps) {
   );
 }
 
+interface GRCItem {
+  title: string;
+  subtitle: string;
+  url: string;
+}
+
 export default function ListScreen() {
   const { title } = useLocalSearchParams<{ title: string }>();
-  const displayTitle = title || 'Settings';
+  const { user } = useAuth();
+  const [items, setItems] = useState<GRCItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const listItems = [
-    {
-      title: 'Game Settings',
-      subtitle: 'Configure your game preferences and rules',
-    },
-    {
-      title: 'Player Profiles',
-      subtitle: 'Manage player information and statistics',
-    },
-    {
-      title: 'Game History',
-      subtitle: 'View your past games and results',
-    },
-    {
-      title: 'Achievements',
-      subtitle: 'Track your gaming milestones',
-    },
-    {
-      title: 'Notifications',
-      subtitle: 'Manage your notification preferences',
-    },
-    {
-      title: 'Help & Support',
-      subtitle: 'Get assistance and learn more',
-    },
-  ];
+  useEffect(() => {
+    const fetchGRCContent = async () => {
+      if (!user?.id || !title) return;
+
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `https://board-konect-hackfest-2025.vercel.app/api/grc_content/${user.id}/${title.toLowerCase()}`
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+
+        const data = await response.json();
+        setItems(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGRCContent();
+  }, [user?.id, title]);
 
   const handleBack = () => {
     router.back();
   };
+
+  const handleItemPress = (url: string) => {
+    if (url) {
+      if (url.startsWith('/')) {
+        router.push(url as any);
+      }
+    }
+  };
+
+  if (loading) {
+    return (
+      <View style={styles.centerContainer}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.centerContainer}>
+        <ThemedText style={styles.errorText}>{error}</ThemedText>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -74,7 +109,7 @@ export default function ListScreen() {
         >
           <IconSymbol name="chevron.left" size={24} color="#000" />
         </Pressable>
-        <ThemedText style={styles.headerTitle}>{displayTitle}</ThemedText>
+        <ThemedText style={styles.headerTitle}>{title}</ThemedText>
       </ThemedView>
       
       <ScrollView 
@@ -82,12 +117,13 @@ export default function ListScreen() {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {listItems.map((item, index) => (
+        {items.map((item, index) => (
           <ListItem
             key={index}
             title={item.title}
             subtitle={item.subtitle}
-            onPress={() => console.log('Pressed:', item.title)}
+            url={item.url}
+            onPress={() => handleItemPress(item.url)}
           />
         ))}
       </ScrollView>
@@ -99,26 +135,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  centerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 20,
-    paddingTop: 60,
+    padding: 16,
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
-    backgroundColor: '#fff',
   },
   backButton: {
-    marginRight: 16,
     padding: 8,
-    borderRadius: 8,
-    backgroundColor: '#f5f5f5',
+    marginRight: 8,
   },
   headerTitle: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    flex: 1,
-    textAlign: 'center',
   },
   scrollView: {
     flex: 1,
@@ -130,6 +165,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 12,
     marginBottom: 12,
+    padding: 16,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -141,16 +177,13 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.7,
-    transform: [{ scale: 0.98 }],
   },
   listItemContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
   },
   textContainer: {
     flex: 1,
-    marginRight: 12,
   },
   itemTitle: {
     fontSize: 16,
@@ -160,5 +193,10 @@ const styles = StyleSheet.create({
   itemSubtitle: {
     fontSize: 14,
     color: '#666',
+  },
+  errorText: {
+    color: '#ff4444',
+    fontSize: 16,
+    textAlign: 'center',
   },
 }); 

@@ -210,17 +210,17 @@ const dataUSA={
         {
           title: "Governance",
           image: "https://hulk.s3.ap-south-1.amazonaws.com/company_2ba91a7ab8.png",
-          route: "/list?title=Age Restrictions"
+          route: "/list?title=Governance"
         },
         {
           title: "Risk Audit",
           image: "https://hulk.s3.ap-south-1.amazonaws.com/speedometer_f039e95200.png",
-          route: "/list?title=Player Count"
+          route: "/list?title=Risk Audit"
         },
         {
           title: "Compliance",
           image: "https://hulk.s3.ap-south-1.amazonaws.com/compliant_9e544fbcc9.png",
-          route: "/list?title=Game Duration"
+          route: "/list?title=Compliance"
         }
       ],
       customerARR: [
@@ -388,6 +388,368 @@ const dataRussia={
       
 }
 
+//Sample data for Governance
+const governanceIndia=[
+    {
+      title: 'Companies Act, 2013',
+      subtitle: 'Legal framework for company governance',
+      url: "/list?title=Governance"
+    },
+    {
+      title: 'Securities and Exchange Board of India (SEBI)',
+      subtitle: 'Market regulation and investor protection',
+      url: "/list?title=Risk Audit"
+    },
+    {
+      title: 'Other Regulatory Bodies',
+      subtitle: 'Additional authorities overseeing compliance',
+      url: "/list?title=Compliance"
+    },
+    {
+      title: 'Board Composition',
+      subtitle: 'Structure and roles of board',
+      url: "/list?title=Compliance"
+    },
+    {
+      title: 'Key Committees',
+      subtitle: 'Essential governance sub-groups explained',
+      url: "/list?title=Compliance"
+    },
+    {
+      title: 'Duties of Directors',
+      subtitle: 'Responsibilities and legal obligations overview',
+      url: "/list?title=Compliance"
+    }
+  ]
+
+const governanceUSA=[
+        {
+          title: 'Legal Framework',
+          subtitle: 'Guidelines governing corporate actions',
+          url: ''
+        },
+        {
+          title: 'Board Structure and Responsibilities',
+          subtitle: 'Roles and duties of directors',
+          url: ''
+        },
+        {
+          title: 'Listing Rules',
+          subtitle: 'Regulations for public companies',
+          url: ''
+        },
+        {
+          title: 'Shareholder Rights',
+          subtitle: 'Protections and voting entitlements',
+          url: ''
+        },
+        {
+          title: 'Risk Management and Compliance',
+          subtitle: 'Monitoring risks and legal adherence',
+          url: ''
+        },
+        {
+          title: 'Transparency and Accountability',
+          subtitle: 'Clear reporting and ethical governance',
+          url: ''
+        }
+      ]
+      
+
+  const governanceUK=[
+    {
+      title: 'UK Corporate Governance Code',
+      subtitle: 'Standards for corporate governance practices',
+      url: ''
+    },
+    {
+      title: 'Board Structure and Responsibilities',
+      subtitle: 'Roles, duties, and composition overview',
+      url: ''
+    },
+    {
+      title: 'Legal Framework',
+      subtitle: 'Regulations governing board activities',
+      url: ''
+    },
+    {
+      title: 'Risk Management and Compliance',
+      subtitle: 'Identifying and addressing business risks',
+      url: ''
+    },
+    {
+      title: 'Shareholder Engagement',
+      subtitle: 'Building strong investor relationships',
+      url: ''
+    },
+    {
+      title: 'Diversity and Succession Planning',
+      subtitle: 'Ensuring inclusive leadership continuity',
+      url: ''
+    }
+  ]
+  
+
+  const governanceRussia=[
+    {
+      title: 'Russian Civil Code (RCC)',
+      subtitle: 'Foundation of civil legal framework',
+      url: ''
+    },
+    {
+      title: 'Federal Law on Joint-Stock Companies (JSC Law)',
+      subtitle: 'Rules governing joint-stock companies',
+      url: ''
+    },
+    {
+      title: 'Securities Market Law',
+      subtitle: 'Regulates public securities trading',
+      url: ''
+    },
+    {
+      title: 'Corporate Governance Code (CGC)',
+      subtitle: 'Best practices for company management',
+      url: ''
+    },
+    {
+      title: 'Regulatory Oversight',
+      subtitle: 'Monitoring compliance with laws',
+      url: ''
+    }
+  ]
+  
+  //Sample data for Risk Audit
+  const riskAuditIndia=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding risk and its significance',
+      url: ''
+    },
+    {
+      title: 'Risk Management Framework',
+      subtitle: 'Structured approach to managing risk',
+      url: ''
+    },
+    {
+      title: 'Regulatory Requirements',
+      subtitle: 'Compliance with legal risk standards',
+      url: ''
+    },
+    {
+      title: 'Challenges in Risk Management',
+      subtitle: 'Common obstacles and risk pitfalls',
+      url: ''
+    },
+    {
+      title: 'Industry-Specific Risk Management',
+      subtitle: 'Tailored strategies for various sectors',
+      url: ''
+    }
+  ]
+  
+
+  const riskAuditUSA=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding risk and its significance',
+      url: ''
+    },
+    {
+      title: 'Risk Management Framework',
+      subtitle: 'Structured approach to managing risk',
+      url: ''
+    },
+    {
+      title: 'Regulatory Requirements',
+      subtitle: 'Compliance with legal risk standards',
+      url: ''
+    },
+    {
+      title: 'Challenges in Risk Management',
+      subtitle: 'Common obstacles and risk pitfalls',
+      url: ''
+    },
+    {
+      title: 'Industry-Specific Risk Management',
+      subtitle: 'Tailored strategies for various sectors',
+      url: ''
+    }
+  ]
+
+  const riskAuditUK=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding risk and its significance',
+      url: ''
+    },
+    {
+      title: 'Risk Management Framework',
+      subtitle: 'Structured approach to managing risk',
+      url: ''
+    },
+    {
+      title: 'Regulatory Requirements',
+      subtitle: 'Compliance with legal risk standards',
+      url: ''
+    },
+    {
+      title: 'Challenges in Risk Management',
+      subtitle: 'Common obstacles and risk pitfalls',
+      url: ''
+    },
+    {
+      title: 'Industry-Specific Risk Management',
+      subtitle: 'Tailored strategies for various sectors',
+      url: ''
+    }
+  ]
+
+  const riskAuditRussia=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding risk and its significance',
+      url: ''
+    },
+    {
+      title: 'Risk Management Framework',
+      subtitle: 'Structured approach to managing risk',
+      url: ''
+    },
+    {
+      title: 'Regulatory Requirements',
+      subtitle: 'Compliance with legal risk standards',
+      url: ''
+    },
+    {
+      title: 'Challenges in Risk Management',
+      subtitle: 'Common obstacles and risk pitfalls',
+      url: ''
+    },
+    {
+      title: 'Industry-Specific Risk Management',
+      subtitle: 'Tailored strategies for various sectors',
+      url: ''
+    }
+  ]
+
+  //Sample data for Compliance
+  const complianceIndia=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding compliance and its value',
+      url: ''
+    },
+    {
+      title: 'Types of Compliance',
+      subtitle: 'Various forms across industries',
+      url: ''
+    },
+    {
+      title: 'Regulatory Bodies',
+      subtitle: 'Organizations enforcing compliance rules',
+      url: ''
+    },
+    {
+      title: 'Challenges in Compliance',
+      subtitle: 'Common issues organizations encounter',
+      url: ''
+    },
+    {
+      title: 'Certifications and Training',
+      subtitle: 'Programs to enhance compliance knowledge',
+      url: ''
+    }
+  ]
+  
+
+  const complianceUSA=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding compliance and its value',
+      url: ''
+    },
+    {
+      title: 'Types of Compliance',
+      subtitle: 'Various forms across industries',
+      url: ''
+    },
+    {
+      title: 'Regulatory Bodies',
+      subtitle: 'Organizations enforcing compliance rules',
+      url: ''
+    },
+    {
+      title: 'Challenges in Compliance',
+      subtitle: 'Common issues organizations encounter',
+      url: ''
+    },
+    {
+      title: 'Certifications and Training',
+      subtitle: 'Programs to enhance compliance knowledge',
+      url: ''
+    }
+  ]
+  
+
+  const complianceUK=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding compliance and its value',
+      url: ''
+    },
+    {
+      title: 'Types of Compliance',
+      subtitle: 'Various forms across industries',
+      url: ''
+    },
+    {
+      title: 'Regulatory Bodies',
+      subtitle: 'Organizations enforcing compliance rules',
+      url: ''
+    },
+    {
+      title: 'Challenges in Compliance',
+      subtitle: 'Common issues organizations encounter',
+      url: ''
+    },
+    {
+      title: 'Certifications and Training',
+      subtitle: 'Programs to enhance compliance knowledge',
+      url: ''
+    }
+  ]
+  
+
+  const complianceRussia=[
+    {
+      title: 'Definition and Importance',
+      subtitle: 'Understanding compliance and its value',
+      url: ''
+    },
+    {
+      title: 'Types of Compliance',
+      subtitle: 'Various forms across industries',
+      url: ''
+    },
+    {
+      title: 'Regulatory Bodies',
+      subtitle: 'Organizations enforcing compliance rules',
+      url: ''
+    },
+    {
+      title: 'Challenges in Compliance',
+      subtitle: 'Common issues organizations encounter',
+      url: ''
+    },
+    {
+      title: 'Certifications and Training',
+      subtitle: 'Programs to enhance compliance knowledge',
+      url: ''
+    }
+  ]
+  
+  
+
 // Home API endpoint
 app.get('/api/home', (req, res) => {
   try {
@@ -417,6 +779,119 @@ app.get('/api/home', (req, res) => {
         break;
       default:
         data = homePageData; // Default to India data
+    }
+
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// GRC Content API endpoint
+app.get('/api/grc_content/:id/:category', (req, res) => {
+  try {
+    const userId = parseInt(req.params.id);
+    const category = req.params.category;
+
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID is required' });
+    }
+
+    if (!category) {
+      return res.status(400).json({ error: 'Category is required' });
+    }
+
+    const user = users.find(u => u.id === userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    let data;
+    // First get country-specific data
+    switch (user.profile.country) {
+      case 'India':
+        // Then get category-specific data for India
+        switch (category.toLowerCase()) {
+          case 'governance':
+            data = governanceIndia;
+            break;
+          case 'compliance':
+            data = complianceIndia;
+            break;
+          case 'risk':
+            data = riskAuditIndia;
+            break;
+          default:
+            return res.status(400).json({ error: 'Invalid category' });
+        }
+        break;
+
+      case 'USA':
+        // Then get category-specific data for USA
+        switch (category.toLowerCase()) {
+          case 'governance':
+            data = governanceUSA;
+            break;
+          case 'compliance':
+            data = complianceUSA;
+            break;
+          case 'risk':
+            data = riskAuditUSA;
+            break;
+          default:
+            return res.status(400).json({ error: 'Invalid category' });
+        }
+        break;
+
+      case 'UK':
+        // Then get category-specific data for UK
+        switch (category.toLowerCase()) {
+          case 'governance':
+            data = governanceUK;
+            break;
+          case 'compliance':
+            data = complianceUK;
+            break;
+          case 'risk':
+            data = riskAuditUK;
+            break;
+          default:
+            return res.status(400).json({ error: 'Invalid category' });
+        }
+        break;
+
+      case 'Russia':
+        // Then get category-specific data for Russia
+        switch (category.toLowerCase()) {
+          case 'governance':
+            data = governanceRussia;
+            break;
+          case 'compliance':
+            data = complianceRussia;
+            break;
+          case 'risk':
+            data = riskAuditRussia;
+            break;
+          default:
+            return res.status(400).json({ error: 'Invalid category' });
+        }
+        break;
+
+      default:
+        // Default to India data if country is not recognized
+        switch (category.toLowerCase()) {
+          case 'governance':
+            data = governanceIndia;
+            break;
+          case 'compliance':
+            data = complianceIndia;
+            break;
+          case 'risk':
+            data = riskAuditIndia;
+            break;
+          default:
+            return res.status(400).json({ error: 'Invalid category' });
+        }
     }
 
     res.json(data);
