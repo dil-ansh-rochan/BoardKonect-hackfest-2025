@@ -909,6 +909,440 @@ const governanceUSA=[
   ]
   
 
+// Connect Dummy Data
+
+const connectUSA=[
+  {
+    title: 'DFAS',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Emily Carter (CFO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'James Walker (IT Manager)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Olivia Lee (HR)',
+        status: 'Online',
+      },
+    ],
+  },
+  {
+    title: 'Bank of America',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Michael Smith (CEO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sophia Johnson (Product Manager)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Daniel Brown (VP, Finance)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Ava Wilson (Data Analyst)',
+        status: 'Offline',
+      },
+    ],
+  },
+  {
+    title: 'Cisco Systems Inc',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Liam Garcia (CTO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Isabella Martinez (Software Engineer)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Noah Davis (DevOps Engineer)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Mia Taylor (Product Owner)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Ethan Moore (Network Architect)',
+        status: 'Offline',
+      },
+    ],
+  },
+  {
+    title: 'West Publishing',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Charlotte Anderson (Editor-in-Chief)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Benjamin Thomas (Legal Advisor)',
+        status: 'Offline',
+      },
+    ],
+  },
+  {
+    title: 'Johnson & Johnson',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Amelia Jackson (CEO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Elijah White (Pharma Lead)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Harper Harris (Research Analyst)',
+        status: 'Online',
+      },
+    ],
+  }
+]
+
+const connectUK=[
+  {
+    title: 'Deutsche bank AG',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Anna Muller (CEO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'James Thornton (CTO)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Emily Clarke (Analyst)',
+        status: 'Online',
+      },
+    ],
+  },
+  {
+    title: 'HSBC Global services',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sarah Ahmed (Manager)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'David Patel (Lead Engineer)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Rachel Green (COO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Tom Hardy (Architect)',
+        status: 'Offline',
+      },
+    ],
+  },
+  {
+    title: 'Barclays execution services limited',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Oliver Smith (Director)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Liam Johnson (Analyst)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Grace Wilson (Project Lead)',
+        status: 'Online',
+      },
+    ],
+  },
+  {
+    title: 'Aon Solutions',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Isla Taylor (VP)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Ethan Davis (Solutions Expert)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Chloe Brown (Consultant)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'George White (HR Head)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Jessica Lee (Director)',
+        status: 'Online',
+      },
+    ],
+  },
+  {
+    title: 'Aviva Central services',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Benjamin Scott (Manager)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Lucy Hall (Finance Lead)',
+        status: 'Online',
+      },
+    ],
+  },
+]
+
+const connectIndia=[
+  {
+    title: 'Reliance Industries',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Mukesh Ambani (Chairman)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Neha Reddy (CTO)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Ravi Kumar (CFO)',
+        status: 'Online',
+      }
+    ]
+  },
+  {
+    title: 'HDFC Bank',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sandeep Bansal (CEO)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Aarti Mehra (Head of Retail Banking)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Karan Malhotra (CIO)',
+        status: 'Offline',
+      }
+    ]
+  },
+  {
+    title: 'Tata Consultancy Services',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Rajesh Gopinathan (CEO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sneha Verma (Tech Lead)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Ankit Shah (HR Head)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Nisha Patel (Product Manager)',
+        status: 'Online',
+      }
+    ]
+  },
+  {
+    title: 'Bharti Airtel',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sunil Mittal (Chairman)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Alok Yadav (VP - Networks)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Priya Shah (Customer Experience Head)',
+        status: 'Online',
+      }
+    ]
+  },
+  {
+    title: 'ICICI Bank',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sandeep Bakhshi (CEO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Megha Rani (Chief Economist)',
+        status: 'Offline',
+      }
+    ]
+  }
+]
+
+const connectRussia = [
+  {
+    title: 'GAZPROM',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Rajesh Verma (CEO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Anita Mehra (CTO)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Deepak Sharma (HR Head)',
+        status: 'Online',
+      },
+    ],
+  },
+  {
+    title: 'ROSNEFT OIL',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Vikram Patel (COO)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Priya Singh (Finance Head)',
+        status: 'Online',
+      },
+    ],
+  },
+  {
+    title: 'SBERBANK OF RUSSIA',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Arjun Desai (CEO)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Kiran Nair (CFO)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Megha Gupta (Tech Lead)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Rahul Joshi (Compliance Officer)',
+        status: 'Offline',
+      },
+    ],
+  },
+  {
+    title: 'PAO NOVATEK',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sunita Rao (VP Operations)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Manoj Thakur (CEO)',
+        status: 'Online',
+      },
+    ],
+  },
+  {
+    title: 'LUKOIL',
+    items: [
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Neha Kapoor (Marketing Head)',
+        status: 'Offline',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Amit Chaudhary (Country Head)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Sandeep Reddy (Operations Manager)',
+        status: 'Online',
+      },
+      {
+        image: require('@/assets/images/partial-react-logo.png'),
+        name: 'Ritika Malhotra (HR Manager)',
+        status: 'Offline',
+      },
+    ],
+  },
+]
+
 
 
 // Home API endpoint
@@ -1095,6 +1529,44 @@ app.get('/api/settings/:country', (req, res) => {
 //   }));
 
   res.json(settings);
+});
+
+// Connect Data API endpoint
+app.get('/api/connect/:id', (req, res) => {
+  try {
+    const userId = parseInt(req.params.id);
+
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID is required' });
+    }
+
+    const user = users.find(u => u.id === userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    let data;
+    switch (user.profile.country) {
+      case 'India':
+        data = connectIndia;
+        break;
+      case 'USA':
+        data = connectUSA;
+        break;
+      case 'UK':
+        data = connectUK;
+        break;
+      case 'Russia':
+        data = connectRussia;
+        break;
+      default:
+        data = connectIndia; // Default to India data
+    }
+
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 // Start the server
