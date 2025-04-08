@@ -818,7 +818,7 @@ app.get('/api/grc_content/:id/:category', (req, res) => {
           case 'compliance':
             data = complianceIndia;
             break;
-          case 'risk':
+          case 'risk audit':
             data = riskAuditIndia;
             break;
           default:
@@ -835,7 +835,7 @@ app.get('/api/grc_content/:id/:category', (req, res) => {
           case 'compliance':
             data = complianceUSA;
             break;
-          case 'risk':
+          case 'risk audit':
             data = riskAuditUSA;
             break;
           default:
@@ -852,7 +852,7 @@ app.get('/api/grc_content/:id/:category', (req, res) => {
           case 'compliance':
             data = complianceUK;
             break;
-          case 'risk':
+          case 'risk audit':
             data = riskAuditUK;
             break;
           default:
@@ -869,7 +869,7 @@ app.get('/api/grc_content/:id/:category', (req, res) => {
           case 'compliance':
             data = complianceRussia;
             break;
-          case 'risk':
+          case 'risk audit':
             data = riskAuditRussia;
             break;
           default:
@@ -886,7 +886,7 @@ app.get('/api/grc_content/:id/:category', (req, res) => {
           case 'compliance':
             data = complianceIndia;
             break;
-          case 'risk':
+          case 'risk audit':
             data = riskAuditIndia;
             break;
           default:
