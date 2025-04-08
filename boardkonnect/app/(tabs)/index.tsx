@@ -5,6 +5,7 @@ import { Carousel } from '@/components/Carousel';
 import { GridSection } from '@/components/GridSection';
 import { ImageScroll } from '@/components/ImageScroll';
 import { useEffect, useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 interface CarouselItem {
   image: string;
@@ -32,17 +33,20 @@ interface HomePageData {
 }
 
 export default function HomeScreen() {
+  const { user } = useAuth();
   const [data, setData] = useState<HomePageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchHomePageData();
-  }, []);
+    if (user?.id) {
+      fetchHomePageData();
+    }
+  }, [user?.id]);
 
   const fetchHomePageData = async () => {
     try {
-      const response = await fetch('https://board-konect-hackfest-2025.vercel.app/api/home');
+      const response = await fetch(`https://board-konect-hackfest-2025.vercel.app/api/home?userId=${user?.id}`);
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
@@ -98,15 +102,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  section: {
-    marginTop: 20,
-  },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    paddingHorizontal: 16,
-  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -118,7 +113,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   errorText: {
-    color: 'red',
+    color: '#ff4444',
     fontSize: 16,
+    textAlign: 'center',
+  },
+  section: {
+    padding: 16,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 16,
   },
 });

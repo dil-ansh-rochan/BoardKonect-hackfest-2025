@@ -388,15 +388,42 @@ const dataRussia={
       
 }
 
-// Home page API endpoint
+// Home API endpoint
 app.get('/api/home', (req, res) => {
   try {
-    res.json(homePageData);
+    const userId = parseInt(req.query.userId);
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID is required' });
+    }
+
+    const user = users.find(u => u.id === userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    let data;
+    switch (user.profile.country) {
+      case 'India':
+        data = homePageData;
+        break;
+      case 'USA':
+        data = dataUSA;
+        break;
+      case 'UK':
+        data = dataUK;
+        break;
+      case 'Russia':
+        data = dataRussia;
+        break;
+      default:
+        data = homePageData; // Default to India data
+    }
+
+    res.json(data);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
 
 // Start the server
 app.listen(port, () => {

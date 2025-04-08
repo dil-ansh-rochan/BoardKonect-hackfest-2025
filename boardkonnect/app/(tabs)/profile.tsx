@@ -1,32 +1,57 @@
-import React from 'react';
-import { StyleSheet, View, Image, Pressable, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, Image, Pressable, ScrollView, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useAuth } from '@/context/AuthContext';
 
 interface ProfileInfo {
-  name: string;
   email: string;
-  country: string;
-  company: string;
-  branch: string;
-  position: string;
+  id: number;
+  profile: {
+    avatar: string;
+    branch: string;
+    company: string;
+    country: string;
+    name: string;
+    position: string;
+  };
 }
 
-// Sample profile data - replace with actual user data
-const profileData: ProfileInfo = {
-  name: 'John Doe',
-  email: 'john.doe@example.com',
-  country: 'United States',
-  company: 'Tech Corp',
-  branch: 'San Francisco',
-  position: 'Senior Developer',
-};
-
 export default function ProfileScreen() {
-  const handleLogout = () => {
-    // TODO: Implement actual logout logic
-    router.replace('/login');
+  const { user, logout } = useAuth();
+  const [profileData, setProfileData] = useState<ProfileInfo | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      if (!user?.id) return;
+      try {
+        setLoading(true);
+        const response = await fetch(`https://board-konect-hackfest-2025.vercel.app/api/user/${user.id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch user profile');
+        }
+        
+        const data = await response.json();
+        setProfileData(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserProfile();
+  }, [user?.id]);
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
   };
 
   const renderProfileField = (label: string, value: string) => (
@@ -36,23 +61,47 @@ export default function ProfileScreen() {
     </View>
   );
 
+  if (loading) {
+    return (
+      <View style={styles.centerContainer}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.centerContainer}>
+        <ThemedText style={styles.errorText}>{error}</ThemedText>
+      </View>
+    );
+  }
+
+  if (!profileData) {
+    return (
+      <View style={styles.centerContainer}>
+        <ThemedText>No profile data available</ThemedText>
+      </View>
+    );
+  }
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={{ uri: profileData.profile.avatar }}
           style={styles.profileImage}
           resizeMode="cover"
         />
-        <ThemedText style={styles.name}>{profileData.name}</ThemedText>
+        <ThemedText style={styles.name}>{profileData.profile.name}</ThemedText>
       </View>
 
       <View style={styles.content}>
         {renderProfileField('Email', profileData.email)}
-        {renderProfileField('Country', profileData.country)}
-        {renderProfileField('Company', profileData.company)}
-        {renderProfileField('Branch', profileData.branch)}
-        {renderProfileField('Position', profileData.position)}
+        {renderProfileField('Country', profileData.profile.country)}
+        {renderProfileField('Company', profileData.profile.company)}
+        {renderProfileField('Branch', profileData.profile.branch)}
+        {renderProfileField('Position', profileData.profile.position)}
 
         <Pressable style={styles.logoutButton} onPress={handleLogout}>
           <ThemedText style={styles.logoutButtonText}>Logout</ThemedText>
@@ -65,6 +114,11 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  centerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   header: {
     alignItems: 'center',
@@ -98,15 +152,20 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   logoutButton: {
-    backgroundColor: '#FF3B30',
+    backgroundColor: '#ff4444',
     padding: 16,
     borderRadius: 8,
     alignItems: 'center',
     marginTop: 20,
   },
   logoutButtonText: {
-    color: '#fff',
+    color: 'white',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '600',
+  },
+  errorText: {
+    color: '#ff4444',
+    fontSize: 16,
+    textAlign: 'center',
   },
 }); 
