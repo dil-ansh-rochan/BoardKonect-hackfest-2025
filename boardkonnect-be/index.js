@@ -308,7 +308,7 @@ const dataUK={
             url: "https://home.barclays/who-we-are/structure-and-leadership/"
           },
           {
-            source: "https://lifesciencewa.org/wp-content/uploads/2020/10/AON-Risk-Solutions-logo-600x600-1.png",
+            source: "https://yt3.googleusercontent.com/mE3Rjp-AUUWwK7wQnLnf4IxtTXOTEjWh6nIynNo73JqYlt380TCODBfnJFDrefIbqveutijg3w=s900-c-k-c0x00ffffff-no-rj",
             title: "ARR-$0.7M",
             url: "https://www.aon.com/india/default.jsp"
           },
@@ -748,7 +748,144 @@ const governanceUSA=[
     }
   ]
   
+
+  //Settings Data
+
+  const usaSettings=[
+    {
+      "title": "Financial statements",
+      "subtitle": "Overview of company's fiscal health",
+      "isEnabled": true
+    },
+    {
+      "title": "Voting",
+      "subtitle": "Cast decisions on key matters",
+      "isEnabled": true
+    },
+    {
+      "title": "CEO report",
+      "subtitle": "Leadership insights and strategic direction",
+      "isEnabled": true
+    },
+    {
+      "title": "Audit committee report",
+      "subtitle": "Review of financial controls & compliance",
+      "isEnabled": true
+    },
+    {
+      "title": "To Do list",
+      "subtitle": "Tasks scheduled for completion",
+      "isEnabled": true
+    },
+    {
+      "title": "Calendar",
+      "subtitle": "Upcoming events and deadlines",
+      "isEnabled": true
+    }
+  ]
   
+  const ukSettings=[
+    {
+      "title": "Financial statements",
+      "subtitle": "Overview of company's fiscal health",
+      "isEnabled": true
+    },
+    {
+      "title": "Voting",
+      "subtitle": "Cast decisions on key matters",
+      "isEnabled": false
+    },
+    {
+      "title": "CEO report",
+      "subtitle": "Leadership insights and strategic direction",
+      "isEnabled": true
+    },
+    {
+      "title": "Audit committee report",
+      "subtitle": "Review of financial controls & compliance",
+      "isEnabled": true
+    },
+    {
+      "title": "To Do list",
+      "subtitle": "Tasks scheduled for completion",
+      "isEnabled": true
+    },
+    {
+      "title": "Calendar",
+      "subtitle": "Upcoming events and deadlines",
+      "isEnabled": true
+    }
+  ]
+  
+  const russiaSettings=[
+    {
+      "title": "Financial statements",
+      "subtitle": "Overview of company's fiscal health",
+      "isEnabled": false
+    },
+    {
+      "title": "Voting",
+      "subtitle": "Cast decisions on key matters",
+      "isEnabled": false
+    },
+    {
+      "title": "CEO report",
+      "subtitle": "Leadership insights and strategic direction",
+      "isEnabled": false
+    },
+    {
+      "title": "Audit committee report",
+      "subtitle": "Review of financial controls & compliance",
+      "isEnabled": false
+    },
+    {
+      "title": "To Do list",
+      "subtitle": "Tasks scheduled for completion",
+      "isEnabled": false
+    },
+    {
+      "title": "Calendar",
+      "subtitle": "Upcoming events and deadlines",
+      "isEnabled": true
+    }
+  ]
+  
+
+  const indiaSettings=[
+    {
+      "title": "Financial statements",
+      "subtitle": "Overview of company's fiscal health",
+      "isEnabled": true
+    },
+    {
+      "title": "Voting",
+      "subtitle": "Cast decisions on key matters",
+      "isEnabled": false
+    },
+    {
+      "title": "CEO report",
+      "subtitle": "Leadership insights and strategic direction",
+      "isEnabled": true
+    },
+    {
+      "title": "Audit committee report",
+      "subtitle": "Review of financial controls & compliance",
+      "isEnabled": false
+    },
+    {
+      "title": "To Do list",
+      "subtitle": "Tasks scheduled for completion",
+      "isEnabled": true
+    },
+    {
+      "title": "Calendar",
+      "subtitle": "Upcoming events and deadlines",
+      "isEnabled": true
+    }
+  ]
+  
+
+
 
 // Home API endpoint
 app.get('/api/home', (req, res) => {
@@ -898,6 +1035,42 @@ app.get('/api/grc_content/:id/:category', (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
+});
+
+// Add this new endpoint after the existing endpoints
+app.get('/api/settings/:country', (req, res) => {
+  const { country } = req.params;
+  const countryLower = country.toLowerCase();
+
+  let settings;
+  switch (countryLower) {
+    case 'usa':
+      settings = usaSettings;
+      break;
+    case 'uk':
+      settings = ukSettings;
+      break;
+    case 'russia':
+      settings = russiaSettings;
+      break;
+    case 'india':
+      settings = indiaSettings;
+      break;
+    default:
+      return res.status(400).json({ error: 'Invalid country code' });
+  }
+
+  // Filter out disabled settings
+  const enabledSettings = settings.filter(setting => setting.isEnabled);
+  
+  // Transform the data to match the frontend's expected format
+  const transformedSettings = enabledSettings.map(setting => ({
+    title: setting.title,
+    subtitle: setting.subtitle,
+    url: `/${setting.title.toLowerCase().replace(/\s+/g, '-')}`
+  }));
+
+  res.json(transformedSettings);
 });
 
 // Start the server

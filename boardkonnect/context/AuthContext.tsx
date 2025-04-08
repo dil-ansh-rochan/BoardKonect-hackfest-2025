@@ -12,8 +12,10 @@ interface UserProfile {
 }
 
 interface User {
-  id: number;
+  id: string;
   email: string;
+  name: string;
+  country: string;
   profile: UserProfile;
 }
 
