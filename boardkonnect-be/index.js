@@ -144,17 +144,17 @@ const homePageData = {
     {
       title: "Governance",
       image: "https://hulk.s3.ap-south-1.amazonaws.com/company_2ba91a7ab8.png",
-      route: "/list?title=Age Restrictions"
+      route: "/list?title=governance"
     },
     {
       title: "Risk Audit",
       image: "https://hulk.s3.ap-south-1.amazonaws.com/speedometer_f039e95200.png",
-      route: "/list?title=Player Count"
+      route: "/list?title=risk audit"
     },
     {
       title: "Compliance",
       image: "https://hulk.s3.ap-south-1.amazonaws.com/compliant_9e544fbcc9.png",
-      route: "/list?title=Game Duration"
+      route: "/list?title=compliance"
     }
   ],
   customerARR: [

@@ -49,7 +49,7 @@ export default function ListScreen() {
   useEffect(() => {
     const fetchGRCContent = async () => {
       if (!user?.id || !title) return;
-
+      console.log('Fetching GRC content for user:', user.id, 'and title:', title.toLowerCase());
       try {
         setLoading(true);
         const response = await fetch(
