@@ -2,10 +2,10 @@ import { StyleSheet, ScrollView, View, Pressable, Image } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface ChildItemProps {
-  image: any;
+  image: string;
   name: string;
   status: string;
   onConnect?: () => void;
@@ -16,10 +16,19 @@ interface SectionProps {
   items: ChildItemProps[];
 }
 
+interface Section {
+  title: string;
+  items: ChildItemProps[];
+}
+
 function ChildItem({ image, name, status, onConnect }: ChildItemProps) {
   return (
     <View style={styles.childItem}>
-      <Image source={image} style={styles.childImage} />
+      <Image 
+        source={{ uri: image }} 
+        style={styles.childImage}
+        defaultSource={require('@/assets/images/partial-react-logo.png')}
+      />
       <View style={styles.childTextContainer}>
         <ThemedText style={styles.childName}>{name}</ThemedText>
         <ThemedText style={styles.childStatus}>{status}</ThemedText>
@@ -72,88 +81,47 @@ function Section({ title, items }: SectionProps) {
 }
 
 export default function ConnectScreen() {
-  const sections = [
-    {
-      title: 'DFAS',
-      items: [
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'John Doe',
-          status: 'Looking for a game',
-        },
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Jane Smith',
-          status: 'Available for chat',
-        },
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Mike Johnson',
-          status: 'In a game',
-        },
-      ],
-    },
-    {
-      title: 'Bank of America',
-      items: [
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Sarah Wilson',
-          status: 'At Local Game Store',
-        },
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Tom Brown',
-          status: 'Hosting a game night',
-        },
-      ],
-    },
-    {
-      title: 'Cisco Systems Inc',
-      items: [
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Alex Davis',
-          status: 'Online',
-        },
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Emma White',
-          status: 'Offline',
-        },
-      ],
-    },
-    {
-      title: 'West Publishing',
-      items: [
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Alex Davis',
-          status: 'Online',
-        },
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Emma White',
-          status: 'Offline',
-        },
-      ],
-    },
-    {
-      title: 'Johnson & Johnson',
-      items: [
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Alex Davis',
-          status: 'Online',
-        },
-        {
-          image: require('@/assets/images/partial-react-logo.png'),
-          name: 'Emma White',
-          status: 'Offline',
-        },
-      ],
-    },
-  ];
+  const [sections, setSections] = useState<Section[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchConnectData();
+  }, []);
+
+  const fetchConnectData = async () => {
+    try {
+      // Replace with your actual API URL
+      const response = await fetch('http://localhost:3000/api/connect/1');
+      if (!response.ok) {
+        throw new Error('Failed to fetch connect data');
+      }
+      const data = await response.json();
+      setSections(data);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
+      setError(errorMessage);
+      console.error('Error fetching connect data:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ThemedText>Loading...</ThemedText>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <ThemedText style={styles.errorText}>Error: {error}</ThemedText>
+      </View>
+    );
+  }
 
   return (
     <ScrollView 
@@ -161,11 +129,11 @@ export default function ConnectScreen() {
       showsVerticalScrollIndicator={false}
     >
       <ThemedView style={styles.header}>
-      <Image
-              source={require('@/assets/images/app_icon.png')}
-              style={styles.image}
-              resizeMode="cover"
-            />
+        <Image
+          source={require('@/assets/images/app_icon.png')}
+          style={styles.image}
+          resizeMode="cover"
+        />
         <ThemedText style={styles.headerTitle}>BoardKonect</ThemedText>
       </ThemedView>
       
@@ -279,5 +247,19 @@ const styles = StyleSheet.create({
   pressed: {
     opacity: 0.7,
     transform: [{ scale: 0.98 }],
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  errorText: {
+    color: '#e00d00',
+    fontSize: 16,
   },
 }); 

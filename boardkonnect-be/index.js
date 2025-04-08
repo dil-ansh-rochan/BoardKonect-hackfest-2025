@@ -916,17 +916,17 @@ const connectUSA=[
     title: 'DFAS',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Emily Carter (CFO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'James Walker (IT Manager)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Olivia Lee (HR)',
         status: 'Online',
       },
@@ -936,22 +936,22 @@ const connectUSA=[
     title: 'Bank of America',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Michael Smith (CEO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sophia Johnson (Product Manager)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Daniel Brown (VP, Finance)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Ava Wilson (Data Analyst)',
         status: 'Offline',
       },
@@ -961,27 +961,27 @@ const connectUSA=[
     title: 'Cisco Systems Inc',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Liam Garcia (CTO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Isabella Martinez (Software Engineer)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Noah Davis (DevOps Engineer)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Mia Taylor (Product Owner)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Ethan Moore (Network Architect)',
         status: 'Offline',
       },
@@ -991,12 +991,12 @@ const connectUSA=[
     title: 'West Publishing',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Charlotte Anderson (Editor-in-Chief)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Benjamin Thomas (Legal Advisor)',
         status: 'Offline',
       },
@@ -1006,17 +1006,17 @@ const connectUSA=[
     title: 'Johnson & Johnson',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Amelia Jackson (CEO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Elijah White (Pharma Lead)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Harper Harris (Research Analyst)',
         status: 'Online',
       },
@@ -1029,17 +1029,17 @@ const connectUK=[
     title: 'Deutsche bank AG',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Anna Muller (CEO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'James Thornton (CTO)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Emily Clarke (Analyst)',
         status: 'Online',
       },
@@ -1049,22 +1049,22 @@ const connectUK=[
     title: 'HSBC Global services',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sarah Ahmed (Manager)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'David Patel (Lead Engineer)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Rachel Green (COO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Tom Hardy (Architect)',
         status: 'Offline',
       },
@@ -1074,17 +1074,17 @@ const connectUK=[
     title: 'Barclays execution services limited',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Oliver Smith (Director)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Liam Johnson (Analyst)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Grace Wilson (Project Lead)',
         status: 'Online',
       },
@@ -1094,27 +1094,27 @@ const connectUK=[
     title: 'Aon Solutions',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Isla Taylor (VP)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Ethan Davis (Solutions Expert)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Chloe Brown (Consultant)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'George White (HR Head)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Jessica Lee (Director)',
         status: 'Online',
       },
@@ -1124,12 +1124,12 @@ const connectUK=[
     title: 'Aviva Central services',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Benjamin Scott (Manager)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Lucy Hall (Finance Lead)',
         status: 'Online',
       },
@@ -1142,17 +1142,17 @@ const connectIndia=[
     title: 'Reliance Industries',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Mukesh Ambani (Chairman)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Neha Reddy (CTO)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Ravi Kumar (CFO)',
         status: 'Online',
       }
@@ -1162,17 +1162,17 @@ const connectIndia=[
     title: 'HDFC Bank',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sandeep Bansal (CEO)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Aarti Mehra (Head of Retail Banking)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Karan Malhotra (CIO)',
         status: 'Offline',
       }
@@ -1182,22 +1182,22 @@ const connectIndia=[
     title: 'Tata Consultancy Services',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Rajesh Gopinathan (CEO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sneha Verma (Tech Lead)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Ankit Shah (HR Head)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Nisha Patel (Product Manager)',
         status: 'Online',
       }
@@ -1207,17 +1207,17 @@ const connectIndia=[
     title: 'Bharti Airtel',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sunil Mittal (Chairman)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Alok Yadav (VP - Networks)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Priya Shah (Customer Experience Head)',
         status: 'Online',
       }
@@ -1227,12 +1227,12 @@ const connectIndia=[
     title: 'ICICI Bank',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sandeep Bakhshi (CEO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Megha Rani (Chief Economist)',
         status: 'Offline',
       }
@@ -1245,17 +1245,17 @@ const connectRussia = [
     title: 'GAZPROM',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Rajesh Verma (CEO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Anita Mehra (CTO)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Deepak Sharma (HR Head)',
         status: 'Online',
       },
@@ -1265,12 +1265,12 @@ const connectRussia = [
     title: 'ROSNEFT OIL',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Vikram Patel (COO)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Priya Singh (Finance Head)',
         status: 'Online',
       },
@@ -1280,22 +1280,22 @@ const connectRussia = [
     title: 'SBERBANK OF RUSSIA',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Arjun Desai (CEO)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Kiran Nair (CFO)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Megha Gupta (Tech Lead)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Rahul Joshi (Compliance Officer)',
         status: 'Offline',
       },
@@ -1305,12 +1305,12 @@ const connectRussia = [
     title: 'PAO NOVATEK',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sunita Rao (VP Operations)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Manoj Thakur (CEO)',
         status: 'Online',
       },
@@ -1320,22 +1320,22 @@ const connectRussia = [
     title: 'LUKOIL',
     items: [
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Neha Kapoor (Marketing Head)',
         status: 'Offline',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Amit Chaudhary (Country Head)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Sandeep Reddy (Operations Manager)',
         status: 'Online',
       },
       {
-        image: require('@/assets/images/partial-react-logo.png'),
+        image: 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
         name: 'Ritika Malhotra (HR Manager)',
         status: 'Offline',
       },
