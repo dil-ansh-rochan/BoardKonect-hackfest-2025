@@ -74,7 +74,7 @@ function Section({ title, items }: SectionProps) {
 export default function ConnectScreen() {
   const sections = [
     {
-      title: 'Online Players',
+      title: 'DFAS',
       items: [
         {
           image: require('@/assets/images/partial-react-logo.png'),
@@ -94,7 +94,7 @@ export default function ConnectScreen() {
       ],
     },
     {
-      title: 'Nearby Players',
+      title: 'Bank of America',
       items: [
         {
           image: require('@/assets/images/partial-react-logo.png'),
@@ -109,7 +109,37 @@ export default function ConnectScreen() {
       ],
     },
     {
-      title: 'Friends',
+      title: 'Cisco Systems Inc',
+      items: [
+        {
+          image: require('@/assets/images/partial-react-logo.png'),
+          name: 'Alex Davis',
+          status: 'Online',
+        },
+        {
+          image: require('@/assets/images/partial-react-logo.png'),
+          name: 'Emma White',
+          status: 'Offline',
+        },
+      ],
+    },
+    {
+      title: 'West Publishing',
+      items: [
+        {
+          image: require('@/assets/images/partial-react-logo.png'),
+          name: 'Alex Davis',
+          status: 'Online',
+        },
+        {
+          image: require('@/assets/images/partial-react-logo.png'),
+          name: 'Emma White',
+          status: 'Offline',
+        },
+      ],
+    },
+    {
+      title: 'Johnson & Johnson',
       items: [
         {
           image: require('@/assets/images/partial-react-logo.png'),

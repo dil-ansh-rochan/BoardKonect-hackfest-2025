@@ -37,7 +37,7 @@ export default function LoginScreen() {
           style={styles.logo}
           resizeMode="contain"
         />
-        <ThemedText style={styles.title}>BoardKonnect</ThemedText>
+        <ThemedText style={styles.title}>BoardKonect</ThemedText>
       </View>
 
       <View style={styles.formContainer}>

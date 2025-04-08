@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, Image, View, Dimensions } from 'react-native';
+import { StyleSheet, ScrollView, Image, View, Dimensions, TouchableOpacity, Linking } from 'react-native';
 import { ThemedText } from './ThemedText';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -15,6 +15,16 @@ interface ImageScrollProps {
 }
 
 export function ImageScroll({ images }: ImageScrollProps) {
+  const handlePress = async (url?: string) => {
+    if (url) {
+      try {
+        await Linking.openURL(url);
+      } catch (error) {
+        console.error('Error opening URL:', error);
+      }
+    }
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -23,7 +33,12 @@ export function ImageScroll({ images }: ImageScrollProps) {
         contentContainerStyle={styles.scrollContent}
       >
         {images.map((item, index) => (
-          <View key={index} style={styles.imageContainer}>
+          <TouchableOpacity
+            key={index}
+            style={styles.imageContainer}
+            onPress={() => handlePress(item.url)}
+            activeOpacity={0.7}
+          >
             <Image
               source={{ uri: item.source }}
               style={styles.image}
@@ -34,7 +49,7 @@ export function ImageScroll({ images }: ImageScrollProps) {
                 {item.title}
               </ThemedText>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>
@@ -62,7 +77,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 14,
+    fontSize: 11,
     textAlign: 'center',
   },
 }); 

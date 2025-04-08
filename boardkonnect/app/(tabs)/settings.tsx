@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, View, Pressable, ActivityIndicator, Linking, Platform, Alert } from 'react-native';
+import { StyleSheet, ScrollView, View, Pressable, ActivityIndicator, Linking, Platform, Alert, Image } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useAuth } from '@/context/AuthContext';
@@ -151,6 +151,11 @@ export default function SettingsScreen() {
       showsVerticalScrollIndicator={false}
     >
       <ThemedView style={styles.header}>
+      <Image
+              source={require('@/assets/images/app_icon.png')}
+              style={styles.image}
+              resizeMode="cover"
+            />
         <ThemedText style={styles.headerTitle}>Board (R) Actions</ThemedText>
       </ThemedView>
       
@@ -181,16 +186,28 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 20,
-    paddingTop: 60,
+    paddingTop: 25,
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: '#e00d00',
+    gap: 10,
+    alignItems: 'center',
+    justifyContent:'flex-start',
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#fff',
   },
   content: {
     padding: 16,
+  },
+  image: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
   },
   itemContainer: {
     flexDirection: 'row',

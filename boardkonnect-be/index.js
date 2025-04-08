@@ -174,7 +174,7 @@ const homePageData = {
       url: "https://www.tcs.com/"
     },
     {
-      source: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Bharti_Airtel_Logo.svg",
+      source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLTWDVKnWNY-rE76XIFDKeJHmTM8yCc1FEzA&s",
       title: "ARR-₹10.30T",
       url: "https://www.airtel.in/"
     },

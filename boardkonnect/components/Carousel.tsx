@@ -157,8 +157,9 @@ export function Carousel({ items }: CarouselProps) {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop:30,
     width: SCREEN_WIDTH,
-    height: 300,
+    height: 260,
     alignItems: 'center',
     justifyContent: 'center',
   },
