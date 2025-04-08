@@ -1,10 +1,15 @@
 import { StyleSheet, ScrollView, View, Pressable, ActivityIndicator } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import { router } from 'expo-router';
-import { useEffect, useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
+import { useEffect, useState } from 'react';
+
+interface SettingItemProps {
+  title: string;
+  subtitle: string;
+  isEnabled: boolean;
+  onPress?: () => void;
+}
 
 interface SettingItem {
   title: string;
@@ -12,16 +17,37 @@ interface SettingItem {
   url: string;
 }
 
+function SettingItem({ title, subtitle, isEnabled, onPress }: SettingItemProps) {
+  return (
+    <Pressable 
+      style={({ pressed }) => [
+        styles.itemContainer,
+        pressed && styles.pressed
+      ]}
+      onPress={onPress}
+    >
+      <View style={styles.textContainer}>
+        <ThemedText style={styles.title}>{title}</ThemedText>
+        <ThemedText style={styles.subtitle}>{subtitle}</ThemedText>
+      </View>
+      <View style={[
+        styles.statusDot,
+        { backgroundColor: isEnabled ? '#4CAF50' : '#F44336' }
+      ]} />
+    </Pressable>
+  );
+}
+
 export default function SettingsScreen() {
   const { user } = useAuth();
-  const [settings, setSettings] = useState<SettingItem[]>([]);
+  const [settingsItems, setSettingsItems] = useState<SettingItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchSettings = async () => {
       if (!user?.profile?.country) {
-        console.log('Missing country data');
+        console.log('No country found for user');
         return;
       }
 
@@ -52,7 +78,7 @@ export default function SettingsScreen() {
           throw new Error('Invalid response format: expected an array');
         }
         
-        setSettings(data);
+        setSettingsItems(data);
       } catch (err) {
         console.error('Fetch error:', err);
         setError(err instanceof Error ? err.message : 'An error occurred while fetching settings');
@@ -63,14 +89,6 @@ export default function SettingsScreen() {
 
     fetchSettings();
   }, [user?.profile?.country]);
-
-  const handleItemPress = (url: string) => {
-    if (url) {
-      if (url.startsWith('/')) {
-        router.push(url as any);
-      }
-    }
-  };
 
   if (loading) {
     return (
@@ -89,36 +107,26 @@ export default function SettingsScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView 
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+    >
       <ThemedView style={styles.header}>
-        <ThemedText style={styles.headerTitle}>Settings</ThemedText>
+        <ThemedText style={styles.headerTitle}>Board (R) Actions</ThemedText>
       </ThemedView>
       
-      <ScrollView 
-        style={styles.scrollView}
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
-      >
-        {settings.map((setting, index) => (
-          <Pressable 
+      <View style={styles.content}>
+        {settingsItems.map((item, index) => (
+          <SettingItem
             key={index}
-            style={({ pressed }) => [
-              styles.settingItem,
-              pressed && styles.pressed
-            ]}
-            onPress={() => handleItemPress(setting.url)}
-          >
-            <View style={styles.settingItemContent}>
-              <View style={styles.textContainer}>
-                <ThemedText style={styles.settingTitle}>{setting.title}</ThemedText>
-                <ThemedText style={styles.settingSubtitle}>{setting.subtitle}</ThemedText>
-              </View>
-              <IconSymbol name="chevron.right" size={20} color="#666" />
-            </View>
-          </Pressable>
+            title={item.title}
+            subtitle={item.subtitle}
+            isEnabled={false} // All items from API are enabled by default
+            onPress={() => console.log('Pressed:', item.title)}
+          />
         ))}
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -132,7 +140,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    padding: 16,
+    padding: 20,
+    paddingTop: 60,
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
   },
@@ -140,17 +149,17 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
-  scrollView: {
-    flex: 1,
-  },
-  scrollContent: {
+  content: {
     padding: 16,
   },
-  settingItem: {
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 16,
     backgroundColor: '#fff',
     borderRadius: 12,
     marginBottom: 12,
-    padding: 16,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -162,22 +171,25 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.7,
-  },
-  settingItemContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    transform: [{ scale: 0.98 }],
   },
   textContainer: {
     flex: 1,
+    marginRight: 16,
   },
-  settingTitle: {
+  title: {
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 4,
   },
-  settingSubtitle: {
+  subtitle: {
     fontSize: 14,
     color: '#666',
+  },
+  statusDot: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
   },
   errorText: {
     color: '#ff4444',

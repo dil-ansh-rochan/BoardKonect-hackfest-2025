@@ -31,7 +31,7 @@ function ChildItem({ image, name, status, onConnect }: ChildItemProps) {
         ]}
         onPress={onConnect}
       >
-        <ThemedText style={styles.connectButtonText}>Connect</ThemedText>
+        <ThemedText style={styles.connectButtonText}>BoardKonect</ThemedText>
       </Pressable>
     </View>
   );
@@ -131,7 +131,12 @@ export default function ConnectScreen() {
       showsVerticalScrollIndicator={false}
     >
       <ThemedView style={styles.header}>
-        <ThemedText style={styles.headerTitle}>Connect</ThemedText>
+      <Image
+              source={require('@/assets/images/app_icon.png')}
+              style={styles.image}
+              resizeMode="cover"
+            />
+        <ThemedText style={styles.headerTitle}>BoardKonect</ThemedText>
       </ThemedView>
       
       <View style={styles.content}>
@@ -153,13 +158,20 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 20,
-    paddingTop: 60,
+    paddingTop: 25,
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: '#e00d00',
+    gap: 10,
+    alignItems: 'center',
+    justifyContent:'flex-start',
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#fff',
   },
   content: {
     padding: 16,
@@ -176,6 +188,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 3,
     elevation: 3,
+  },
+  image: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
   },
   sectionHeader: {
     flexDirection: 'row',

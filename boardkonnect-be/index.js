@@ -1061,16 +1061,16 @@ app.get('/api/settings/:country', (req, res) => {
   }
 
   // Filter out disabled settings
-  const enabledSettings = settings.filter(setting => setting.isEnabled);
+//   const enabledSettings = settings.filter(setting => setting.isEnabled);
   
   // Transform the data to match the frontend's expected format
-  const transformedSettings = enabledSettings.map(setting => ({
-    title: setting.title,
-    subtitle: setting.subtitle,
-    url: `/${setting.title.toLowerCase().replace(/\s+/g, '-')}`
-  }));
+//   const transformedSettings = enabledSettings.map(setting => ({
+//     title: setting.title,
+//     subtitle: setting.subtitle,
+//     url: `/${setting.title.toLowerCase().replace(/\s+/g, '-')}`
+//   }));
 
-  res.json(transformedSettings);
+  res.json(settings);
 });
 
 // Start the server

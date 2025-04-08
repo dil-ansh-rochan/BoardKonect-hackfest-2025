@@ -14,7 +14,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: '#fff',
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
@@ -24,14 +24,11 @@ export default function TabLayout() {
           left: 0,
           right: 0,
           elevation: 0,
-          backgroundColor: Platform.select({
-            ios: 'transparent',
-            default: Colors[colorScheme ?? 'light'].background,
-          }),
+          backgroundColor: '#e00d00',
         },
         tabBarLabelStyle: {
           fontSize: 12,
-          fontWeight: '500',
+          fontWeight: '700',
         },
       }}>
       <Tabs.Screen
@@ -44,14 +41,21 @@ export default function TabLayout() {
       <Tabs.Screen
         name="connect"
         options={{
-          title: 'Connect',
-          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="person.2.fill" color={color} />,
+          title: 'BoardKonect',
+          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
-          title: 'Settings',
+          title: 'Board Actions',
+          tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="gearshape.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
           tabBarIcon: ({ color }: { color: string }) => <IconSymbol size={28} name="gearshape.fill" color={color} />,
         }}
       />
