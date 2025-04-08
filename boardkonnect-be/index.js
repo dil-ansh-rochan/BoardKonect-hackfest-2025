@@ -210,17 +210,17 @@ const dataUSA={
         {
           title: "Governance",
           image: "https://hulk.s3.ap-south-1.amazonaws.com/company_2ba91a7ab8.png",
-          route: "/list?title=Governance"
+          route: "/list?title=governance"
         },
         {
           title: "Risk Audit",
           image: "https://hulk.s3.ap-south-1.amazonaws.com/speedometer_f039e95200.png",
-          route: "/list?title=Risk Audit"
+          route: "/list?title=risk audit"
         },
         {
           title: "Compliance",
           image: "https://hulk.s3.ap-south-1.amazonaws.com/compliant_9e544fbcc9.png",
-          route: "/list?title=Compliance"
+          route: "/list?title=compliance"
         }
       ],
       customerARR: [
@@ -275,22 +275,22 @@ const dataUK={
       ]
       ,
       grcContent: [
-          {
-            title: "Governance",
-            image: "https://hulk.s3.ap-south-1.amazonaws.com/company_2ba91a7ab8.png",
-            route: "/list?title=Age Restrictions"
-          },
-          {
-            title: "Risk Audit",
-            image: "https://hulk.s3.ap-south-1.amazonaws.com/speedometer_f039e95200.png",
-            route: "/list?title=Player Count"
-          },
-          {
-            title: "Compliance",
-            image: "https://hulk.s3.ap-south-1.amazonaws.com/compliant_9e544fbcc9.png",
-            route: "/list?title=Game Duration"
-          }
-        ],
+        {
+          title: "Governance",
+          image: "https://hulk.s3.ap-south-1.amazonaws.com/company_2ba91a7ab8.png",
+          route: "/list?title=governance"
+        },
+        {
+          title: "Risk Audit",
+          image: "https://hulk.s3.ap-south-1.amazonaws.com/speedometer_f039e95200.png",
+          route: "/list?title=risk audit"
+        },
+        {
+          title: "Compliance",
+          image: "https://hulk.s3.ap-south-1.amazonaws.com/compliant_9e544fbcc9.png",
+          route: "/list?title=compliance"
+        }
+      ],
         customerARR: [
           {
             source: "https://example.com/images/catan.jpg",
@@ -342,22 +342,22 @@ const dataRussia={
         }
       ],
       grcContent: [
-          {
-            title: "Governance",
-            image: "https://hulk.s3.ap-south-1.amazonaws.com/company_2ba91a7ab8.png",
-            route: "/list?title=Age Restrictions"
-          },
-          {
-            title: "Risk Audit",
-            image: "https://hulk.s3.ap-south-1.amazonaws.com/speedometer_f039e95200.png",
-            route: "/list?title=Player Count"
-          },
-          {
-            title: "Compliance",
-            image: "https://hulk.s3.ap-south-1.amazonaws.com/compliant_9e544fbcc9.png",
-            route: "/list?title=Game Duration"
-          }
-        ],
+        {
+          title: "Governance",
+          image: "https://hulk.s3.ap-south-1.amazonaws.com/company_2ba91a7ab8.png",
+          route: "/list?title=governance"
+        },
+        {
+          title: "Risk Audit",
+          image: "https://hulk.s3.ap-south-1.amazonaws.com/speedometer_f039e95200.png",
+          route: "/list?title=risk audit"
+        },
+        {
+          title: "Compliance",
+          image: "https://hulk.s3.ap-south-1.amazonaws.com/compliant_9e544fbcc9.png",
+          route: "/list?title=compliance"
+        }
+      ],
         customerARR: [
           {
             source: "https://example.com/images/catan.jpg",

@@ -48,22 +48,42 @@ export default function ListScreen() {
 
   useEffect(() => {
     const fetchGRCContent = async () => {
-      if (!user?.id || !title) return;
-      console.log('Fetching GRC content for user:', user.id, 'and title:', title.toLowerCase());
+      if (!user?.id || !title) {
+        console.log('Missing required data:', { userId: user?.id, title });
+        return;
+      }
+
       try {
         setLoading(true);
-        const response = await fetch(
-          `https://board-konect-hackfest-2025.vercel.app/api/grc_content/${user.id}/${title.toLowerCase()}`
-        );
-
+        setError(null);
+        
+        const url = `https://board-konect-hackfest-2025.vercel.app/api/grc_content/${user.id}/${title.toLowerCase()}`;
+        console.log('Fetching from URL:', url);
+        
+        const response = await fetch(url);
+        console.log('Response status:', response.status);
+        
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          const errorText = await response.text();
+          console.error('API Error:', {
+            status: response.status,
+            statusText: response.statusText,
+            body: errorText
+          });
+          throw new Error(`API Error: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
+        console.log('Received data:', data);
+        
+        if (!Array.isArray(data)) {
+          throw new Error('Invalid response format: expected an array');
+        }
+        
         setItems(data);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
+        console.error('Fetch error:', err);
+        setError(err instanceof Error ? err.message : 'An error occurred while fetching data');
       } finally {
         setLoading(false);
       }
